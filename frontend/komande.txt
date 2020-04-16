@@ -1,0 +1,20 @@
+//init directory
+ng new rasadnik
+
+//instaliranje bootstrapa
+	npm install bootstrap
+	npm install jquery — save
+	dodati u angular.json : 
+		styles:
+			"./node_modules/bootstrap/dist/css/bootstrap.min.css"
+		scripts:
+			"./node_modules/jquery/dist/jquery.min.js",
+              		"./node_modules/bootstrap/dist/js/bootstrap.js"
+
+
+
+//pokretanje web aplikacije
+ng serve --open
+
+//generisanje komponente
+ng generate c komponente/registracija
