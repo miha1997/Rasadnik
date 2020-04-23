@@ -1,12 +1,32 @@
-<div *ngIf="podaciSpremni" class="row justify-content-center mt-5">
-    <div class="col-sm-4">
-        Large teksteeeeeeeeeeeeeeeeeeeeeeeeee
-        <hr>
-        Large teksteeeeeeeeeeeeeeeeeeeeeeeeee
-        <hr>
-        Large teksteeeeeeeeeeeeeeeeeeeeeeeeee
-        <hr>
-        Large teksteeeeeeeeeeeeeeeeeeeeeeeeee
-        <hr>
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item class="velicina-mdb-itema">
+        <div class="view w-100">
+            <img class="d-block w-100" src="assets/slike/sadnice.jpg">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item class="velicina-mdb-itema">
+        <div class="view w-100">
+            <img class="d-block w-100" src="assets/slike/vinograd.jpg">
+            <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item class="velicina-mdb-itema">
+        <div class="view w-100">
+            <img class="d-block w-100" src="assets/slike/vocnjak.jpg">
+            <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item class="velicina-mdb-itema">
+        <div class="view w-100">
+            <img class="d-block w-100" src="assets/slike/zalivanje.jpg">
+            <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+</mdb-carousel>
+
+<div *ngIf="podaciSpremni" class="row justify-content-center text-center mt-2">
+    <div class="col-sm-8">
+        <h3><img src="assets/slike/seljak.gif" width="150px" height="150px">Dobrodošli kod Baštovanka!</h3>
     </div>
 </div>

@@ -14,8 +14,6 @@ export class PocetnaComponent implements OnInit {
 
   ngOnInit() {
     this.podaciSpremni = true;
-
-    console.log("ej ej");
   }
 
 }

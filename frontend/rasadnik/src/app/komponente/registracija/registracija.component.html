@@ -1,1 +1,102 @@
-<p>registracija works!</p>
+<div class="row justify-content-center mt-5" *ngIf="podaciSpremni">
+    <div class="col-sm-4">
+        <h2>Registracija</h2>
+        <hr>
+        <div *ngIf="poruka">
+            <div class="alert alert-dismissible alert-danger mt-3">
+                <button type="button" class="btn btn-danger disabled">{{poruka}}</button>
+            </div>
+        </div>
+        <form *ngIf="tip=='poljoprivrednik'">
+            <div class="row justify-content-center mb-2">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-success disabled">Poljoprivrednik</button>
+                    <button type="button" class="btn btn-success ml-1" (click)="tipPreduzece()">Preduzece</button>
+                </div>
+            </div>
+            <fieldset>
+                <div class=" form-group">
+                    <label>Ime</label>
+                    <input type="text" class="form-control" placeholder="Unesite ime..." [(ngModel)]="ime" name="ime">
+                </div>
+                <div class="form-group">
+                    <label>Prezime</label>
+                    <input type="text" class="form-control" placeholder="Unesite prezime..." [(ngModel)]="prezime" name="prezime">
+                </div>
+                <div class="form-group">
+                    <label>Korisnicko ime</label>
+                    <input type="text" class="form-control" placeholder="Unesite korisnicko ime..." [(ngModel)]="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label>Lozinka</label>
+                    <input type="password" class="form-control" placeholder="Unesite lozinku..." [(ngModel)]="password" name="password" aria-describedby="passwordHelp">
+                    <small id="passwordHelp" class="form-text text-muted">Mora imati minimum 7 karaktera i bar po jedno veliko slovo, broj i specijalan karakter</small>
+                </div>
+                <div class="form-group">
+                    <label>Potvrdite lozinku</label>
+                    <input type="password" class="form-control" placeholder="Uneti lozinku..." [(ngModel)]="passwordAgain" name="passwordAgain">
+                </div>
+                <div class="form-group">
+                    <label>Datum rodjenja</label>
+                    <input type="date" class="form-control" [(ngModel)]="datum" name="datum">
+                </div>
+                <div class="form-group">
+                    <label>Mesto rodjenja</label>
+                    <input type="text" class="form-control" placeholder="Uneti mesto rodjenja..." [(ngModel)]="mesto" name="mesto">
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="text" class="form-control" placeholder="Uneti broj telefona..." [(ngModel)]="telefon" name="telefon">
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" class="form-control" placeholder="Uneti e-mail..." [(ngModel)]="mail" name="mail">
+                </div>
+            </fieldset>
+        </form>
+
+        <form *ngIf="tip=='preduzece'">
+            <div class="row justify-content-center mb-2">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-success mr-1" (click)="tipPoljoprivrednik()">Poljoprivrednik</button>
+                    <button type="button" class="btn btn-success disabled">Preduzece</button>
+                </div>
+            </div>
+            <fieldset>
+                <div class=" form-group">
+                    <label>Pun naziv preduzeca</label>
+                    <input type="text" class="form-control" placeholder="Unesite pun naziv..." [(ngModel)]="ime" name="ime">
+                </div>
+                <div class="form-group">
+                    <label>Skraceni naziv preduzeca</label>
+                    <input type="text" class="form-control" placeholder="Unesite skraceni naziv (korisnicko ime)..." [(ngModel)]="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label>Lozinka</label>
+                    <input type="password" class="form-control" placeholder="Unesite lozinku..." [(ngModel)]="password" name="password" aria-describedby="passwordHelp">
+                    <small id="passwordHelp" class="form-text text-muted">Mora imati minimum 7 karaktera i bar po jedno veliko slovo, broj i specijalan karakter</small>
+                </div>
+                <div class="form-group">
+                    <label>Potvrdite lozinku</label>
+                    <input type="password" class="form-control" placeholder="Uneti lozinku..." [(ngModel)]="passwordAgain" name="passwordAgain">
+                </div>
+                <div class="form-group">
+                    <label>Datum osnivanja</label>
+                    <input type="date" class="form-control" [(ngModel)]="datum" name="datum">
+                </div>
+                <div class="form-group">
+                    <label>Mesto osnivanja</label>
+                    <input type="text" class="form-control" placeholder="Uneti mesto rodjenja..." [(ngModel)]="mesto" name="mesto">
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" class="form-control" placeholder="Uneti e-mail..." [(ngModel)]="mail" name="mail">
+                </div>
+            </fieldset>
+        </form>
+
+        <form>
+            <button type="button" class="btn btn-primary" (click)="registruj()">Potvrdite</button>
+        </form>
+    </div>
+</div>
