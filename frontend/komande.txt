@@ -10,6 +10,25 @@ ng new rasadnik
 		scripts:
 			"./node_modules/jquery/dist/jquery.min.js",
               		"./node_modules/bootstrap/dist/js/bootstrap.js"
+	
+	(komanda pre ove - npm i angular-bootstrap-md --save, isto po znakom pitanja)
+	https://www.npmjs.com/package/angular-bootstrap-md
+
+	npm install angular-bootstrap-md@8.10.1 (pod znakom pitanja da li je ova komanda, ovo je korisceno za skroller na pocetnoj strani)
+	sa ovog linka je skinuto (https://mdbootstrap.com/support/angular/angular-build-errors/)
+
+
+
+//captcha
+instalacija: npm i ng-recaptcha --save
+pa opet npm i angular-bootstrap-md --save
+opet npm install angular-bootstrap-md@8.10.1
+
+link za setup
+https://www.google.com/recaptcha/admin/site/351087850/setup
+https://www.google.com/recaptcha/admin/site/351085799/setup - nije dobar
+
+
 
 
 
@@ -18,3 +37,12 @@ ng serve --open
 
 //generisanje komponente
 ng generate c komponente/registracija
+
+
+
+
+
+
+
+
+

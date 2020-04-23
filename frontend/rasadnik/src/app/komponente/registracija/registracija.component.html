@@ -96,6 +96,9 @@
         </form>
 
         <form>
+            <div class="form-group">
+                <re-captcha (resolved)="proveraRobota($event)" siteKey="6LfqLO0UAAAAAPG5bZTRG2p2f5CY2DG5BmCn6lNj"></re-captcha>
+            </div>
             <button type="button" class="btn btn-primary" (click)="registruj()">Potvrdite</button>
         </form>
     </div>

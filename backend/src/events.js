@@ -68,7 +68,7 @@ function createRouter(db) {
         let mail = req.body.mail;
 
         db.query(
-            'INSERT INTO poljoprivrednik (id, naziv, datum, mesto, mail) VALUES (?, ?, ?, ?, ?)', [id, naziv, datum, mesto, mail],
+            'INSERT INTO preduzece (id, naziv, datum, mesto, mail) VALUES (?, ?, ?, ?, ?)', [id, naziv, datum, mesto, mail],
             (error, results) => {
                 if (error) {
                     console.log(error);

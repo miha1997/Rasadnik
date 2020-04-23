@@ -10,6 +10,7 @@ import { Korisnik } from 'src/app/modeli/korisnik.model';
 })
 export class RegistracijaComponent implements OnInit {
   podaciSpremni:boolean = false;
+  robot: boolean = true;
   tip:string;
   ime: string;
   prezime: string;
@@ -45,6 +46,10 @@ export class RegistracijaComponent implements OnInit {
     this.podaciSpremni = true;
   }
 
+  proveraRobota(captchaResponse: string){
+    this.robot = false;
+  } 
+
   tipPoljoprivrednik(){
     this.tip = "poljoprivrednik";
   }
@@ -55,6 +60,11 @@ export class RegistracijaComponent implements OnInit {
 
   registruj() {
     this.poruka = '';
+
+    if(this.robot){
+      this.poruka = "Potvrdite da niste robot!";
+      return;
+    }
 
     if(this.tip == 'poljoprivrednik'){
       if(!this.username || !this.password || !this.passwordAgain || !this.ime || !this.prezime || !this.datum || !this.mesto || !this.telefon || !this.mail){
@@ -73,14 +83,13 @@ export class RegistracijaComponent implements OnInit {
       return;
     }
 
-    let regexPassword = /^(?=.*[A-Z])[a-zA-Z](?=.*\d)(?=.*[%*#?&@$!])[A-Za-z\d%*#?&@$!]{7,}$/;
+    let regexPassword = /^(?=.*[A-Z])[a-zA-Z](?=.*\d)(?=.*[\W])[A-Za-z\d\W]{7,}$/;
     if(! regexPassword.test(this.password)){
       this.poruka = "Lozinka nije u odgovarajucem formatu!";
       return;
     }
 
     if(this.tip == 'poljoprivrednik'){
-      console.log(this.telefon);
       let regexPhone = /^[\d]+$/;
       if(! regexPhone.test(this.telefon)){
         this.poruka = "Telefon je u losem formatu!";

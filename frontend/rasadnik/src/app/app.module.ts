@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RecaptchaModule} from 'ng-recaptcha';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { LoginService } from './servisi/login.service';
     HttpClientModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
+    RecaptchaModule.forRoot(),
   ],
   providers: [KorisnikService, LoginService],
   bootstrap: [AppComponent]
