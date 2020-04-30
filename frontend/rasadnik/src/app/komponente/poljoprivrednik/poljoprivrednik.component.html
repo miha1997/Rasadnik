@@ -1,0 +1,34 @@
+<div class="row justify-content-center mt-5" *ngIf="podaciSpremni">
+    <div class="col-sm-8">
+        <h2>Prikaz rasadnika</h2>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Naziv</th>
+                        <th scope="col">Mesto</th>
+                        <th scope="col">Broj zasadjenih</th>
+                        <th scope="col">Broj slobodnih</th>
+                        <th scope="col">Voda</th>
+                        <th scope="col">Temperatura</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rasadnikIter of sviRasadnici; let i = index">
+                        <td>{{i}}.</td>
+                        <td>{{rasadnikIter.naziv}}</td>
+                        <td>{{rasadnikIter.mesto}}</td>
+                        <td>{{rasadnikIter.brojZasadjenih}}</td>
+                        <td>{{rasadnikIter.brojSlobodnih}}</td>
+                        <td>{{rasadnikIter.kolicinaVode}} l</td>
+                        <td>{{rasadnikIter.temperatura}}&deg;C</td>
+                        <td><button type="button" class="btn btn-secondary" (click)="pogledajRasadnik(rasadnikIter)">Detalji</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+    </div>
+</div>

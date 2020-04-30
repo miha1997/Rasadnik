@@ -54,49 +54,13 @@ export class KorisnikService {
     return this.http.post(`${this.uri}/unesiPreduzece`, data);
   }
 
-  getUserWithUsernamePassword(username, password){
+  dohvatiKorisnikaUsernamePassword(username, password){
     const data = {
       username: username,
       password: password
     }
 
-    return this.http.post(`${this.uri}/getUserWithUsernamePassword`, data);
+    return this.http.post(`${this.uri}/dohvatiKorisnikaUsernamePassword`, data);
   }
 
-  pacijent(kor_ime: string) {
-    const data = {
-      username: kor_ime
-    }
-    return this.http.post(`${this.uri}/pacijent`, data);
-  }
-
-  zubari() {
-    return this.http.get(`${this.uri}/zubari`);
-  }
-
-  zubar(){
-    const data = {
-      username:localStorage.getItem("user")
-    }
-    return this.http.post(`${this.uri}/zubar`,data);
-  }
-
-  dodaj(pacijent, datum, zubar) {
-    const data = {
-      pacijent: pacijent,
-      datum: datum,
-      zubar: zubar
-    };
-    return this.http.post(`${this.uri}/dodaj`, data);
-  }
-
-  promeni(idP,status){
-    const data ={
-      idP:idP,
-      status:status
-    };
-    console.log(data);
-    
-    return this.http.post(`${this.uri}/promeni`, data);
-  }
 }

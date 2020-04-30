@@ -4,4 +4,5 @@ export interface Korisnik {
     password: string,
     ime: string,
     tip: string,
+    status: string,
 }

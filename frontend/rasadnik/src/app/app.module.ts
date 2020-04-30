@@ -15,6 +15,10 @@ import { RegistracijaComponent } from './komponente/registracija/registracija.co
 import { HederComponent } from './komponente/heder/heder.component';
 import { KorisnikService } from './servisi/korisnik.service';
 import { LoginService } from './servisi/login.service';
+import { PreduzeceComponent } from './komponente/preduzece/preduzece.component';
+import { PoljoprivrednikComponent } from './komponente/poljoprivrednik/poljoprivrednik.component';
+import { PregledRasadnikaComponent } from './komponente/pregled-rasadnika/pregled-rasadnika.component';
+import { AdminComponent } from './komponente/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { LoginService } from './servisi/login.service';
     PocetnaComponent,
     LoginComponent,
     RegistracijaComponent,
-    HederComponent
+    HederComponent,
+    PreduzeceComponent,
+    PoljoprivrednikComponent,
+    PregledRasadnikaComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

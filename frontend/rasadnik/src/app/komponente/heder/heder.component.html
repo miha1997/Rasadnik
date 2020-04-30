@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="podaciSpremni">
     <p></p>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor02">
         <div class="form-inline mr-auto">
-            <h5 class="text-light" *ngIf="ulogovan">Dobrodošli {{user.name}}!</h5>
+            <h5 class="text-light" *ngIf="ulogovan">Dobrodošli {{korisnik.username}}!</h5>
             <h5 class="text-light" *ngIf="!ulogovan">Gosti dobrodošli!</h5>
         </div>
         <ul class="navbar-nav  my-2 my-lg-0">
@@ -22,9 +21,6 @@
             </li>
             <li class="nav-item" *ngIf="ulogovan && korisnik.tip == 'admin'">
                 <a class="nav-link" routerLink="/registracija">Add User</a>
-            </li>
-            <li class="nav-item" *ngIf="ulogovan">
-                <a class="nav-link" href="#">Profil</a>
             </li>
             <li class="nav-item" *ngIf="ulogovan">
                 <a class="nav-link" href="#" (click)="logout()">Odjavi se</a>

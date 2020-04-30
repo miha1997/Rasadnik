@@ -80,12 +80,12 @@ function createRouter(db) {
         );
     });
 
-    router.post('/getUserWithUsernamePassword', function(req, res) {
+    router.post('/dohvatiKorisnikaUsernamePassword', function(req, res) {
         let username = req.body.username;
         let password = req.body.password;
 
         db.query(
-            'SELECT * FROM user WHERE username=? AND password=?', [username, password],
+            'SELECT * FROM korisnik WHERE username=? AND password=?', [username, password],
             (error, results) => {
                 if (error) {
                     console.log(error);
@@ -97,9 +97,27 @@ function createRouter(db) {
         );
     });
 
-    router.get('/dohvatiKorisnika', function(req, res) {
+    router.post('/dohvatiRasadnikeZaPoljoprivrednika', function(req, res) {
+        let idPoljoprivrednika = req.body.idPoljoprivrednika;
+
         db.query(
-            'SELECT * FROM korisnik WHERE username=?', [username],
+            'SELECT * FROM rasadnik WHERE idPoljoprivrednika=?', [idPoljoprivrednika],
+            (error, results) => {
+                if (error) {
+                    console.log(error);
+                    res.status(500).json({ status: 'error' });
+                } else {
+                    res.status(200).json(results);
+                }
+            }
+        );
+    });
+
+    router.post('/dohvatiRasadnikId', function(req, res) {
+        let id = req.body.id;
+
+        db.query(
+            'SELECT * FROM rasadnik WHERE id=?', [id],
             (error, results) => {
                 if (error) {
                     console.log(error);
